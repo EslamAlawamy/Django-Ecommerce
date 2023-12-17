@@ -1,19 +1,19 @@
 products:
-        - title
-        - rating
-        - price
-        - content
-        - color
-        - quantity
-        - category
+        - title -
+        - rating -
+        - price -
+        - content -
+        - color -
+        - quantity -
+        - category -
         - add to cart
         - Add to Wishlist
         - Add to Compare
         - Share
-        - Description
-        - Additional Information
-        - Shipping & Returns
-        - Reviews
+        - Description -
+        - Additional Information -
+        - Shipping & Returns -
+        - Reviews -
 
 blog:
         - by : author
