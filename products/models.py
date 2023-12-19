@@ -30,7 +30,7 @@ class Product(models.Model):
     content = models.TextField()
     color = models.CharField(max_length=255, choices=COLORS_CHOICES)
     stock = models.IntegerField()
-    category = models.CharField(max_length=255, choices=CATEGORIES_CHOCIES)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
     description = models.TextField()
     Additional_Information = models.TextField()
     Shipping_Returns = models.TextField()
@@ -38,6 +38,14 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=datetime.now)
     updated_at = models.DateTimeField(default=datetime.now)
+
+    def __str__(self):
+        return self.name
+    
+class Category(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Title')
+    slug = models.SlugField(max_length=255, unique=True)
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
