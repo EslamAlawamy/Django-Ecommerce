@@ -31,6 +31,7 @@ class Product(models.Model):
     color = models.CharField(max_length=255, choices=COLORS_CHOICES)
     stock = models.IntegerField()
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    brand = models.ForeignKey('Brand', on_delete=models.CASCADE)
     description = models.TextField()
     Additional_Information = models.TextField()
     Shipping_Returns = models.TextField()
@@ -43,6 +44,11 @@ class Product(models.Model):
         return self.name
     
 class Category(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Title')
+    slug = models.SlugField(max_length=255, unique=True)
+    active = models.BooleanField(default=True)
+
+class Brand(models.Model):
     name = models.CharField(max_length=255, verbose_name='Title')
     slug = models.SlugField(max_length=255, unique=True)
     active = models.BooleanField(default=True)
