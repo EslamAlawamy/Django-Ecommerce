@@ -24,7 +24,7 @@ class Product(models.Model):
     ]
 
     name = models.CharField(max_length=255, verbose_name='Title')
-    image = models.ImageField(upload_to='photos/%y/%m/%d')
+    image = models.ImageField(upload_to='products/%y/%m/%d')
     rating = models.DecimalField(max_digits=2, decimal_places=1)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     content = models.TextField()
