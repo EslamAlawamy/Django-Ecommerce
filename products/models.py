@@ -5,15 +5,6 @@ from datetime import datetime
 
 class Product(models.Model):
 
-    CATEGORIES_CHOCIES = [
-        ('phone', 'Phone'),
-        ('laptop', 'Laptop'),
-        ('watch', 'Watch'),
-        ('headphone', 'Headphone'),
-        ('camera', 'Camera'),
-        ('accessories', 'Accessories'),
-    ]
-
     COLORS_CHOICES = [
         ('black', 'Black'),
         ('silver', 'Silver'),
@@ -47,6 +38,10 @@ class Category(models.Model):
     name = models.CharField(max_length=255, verbose_name='Title')
     slug = models.SlugField(max_length=255, unique=True)
     active = models.BooleanField(default=True)
+    image = models.ImageField(upload_to='categories/%y/%m/%d')
+
+    class Meta:
+        verbose_name_plural = 'Categories'
 
     def __str__(self):
         return self.name
