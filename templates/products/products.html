@@ -94,7 +94,7 @@
                                         <div class="product product-7 text-center">
                                             <figure class="product-media">
                                                 <span class="product-label label-new">New</span>
-                                                <a href="{% url 'products:product' product.id %}">
+                                                <a href="{% url 'products:product' product.slug %}">
                                                     <img src="{{product.image.url}}" alt="Product image" class="product-image">
                                                 </a>
 
@@ -113,7 +113,7 @@
                                                 <div class="product-cat">
                                                     <a href="#">{{product.category}}</a>
                                                 </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a href="{% url 'products:product' product.id %}">{{product.name}}</a></h3><!-- End .product-title -->
+                                                <h3 class="product-title"><a href="{% url 'products:product' product.slug %}">{{product.name}}</a></h3><!-- End .product-title -->
                                                 <div class="product-price">
                                                     {{product.price}}
                                                 </div><!-- End .product-price -->

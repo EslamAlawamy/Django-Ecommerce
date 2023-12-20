@@ -253,7 +253,7 @@
                             <img src="{{product.image.url}}" alt="Product image">
                         </a>
                     </figure><!-- End .product-media -->
-                    <h4 class="product-title"><a href="{% url 'products:product' product.id %}">{{product.name}}</a></h4><!-- End .product-title -->
+                    <h4 class="product-title"><a href="{% url 'products:product' product.slug %}">{{product.name}}</a></h4><!-- End .product-title -->
                 </div><!-- End .col-6 -->
 
                 <div class="col-6 justify-content-end">

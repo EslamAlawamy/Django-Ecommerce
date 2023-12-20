@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.utils.text import slugify
 
 # Create your models here.
 
@@ -30,6 +31,13 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=datetime.now)
     updated_at = models.DateTimeField(default=datetime.now)
+    slug = models.SlugField(blank=True, null=True)
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super(Product, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
