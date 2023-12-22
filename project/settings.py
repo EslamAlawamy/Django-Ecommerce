@@ -31,8 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,3 +135,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+jazzmin_settings = {
+    "site_title": "Egy4Tech",
+    "site_header": "Egy4Tech",
+}
+
+AUTH_USER_MODEL = 'users.User'
